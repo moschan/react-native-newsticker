@@ -4,6 +4,9 @@
  */
 'use strict';
 
+import Newsticker from './index.js';
+// var React = require('./index.js');
+
 var React = require('react-native');
 var {
   AppRegistry,
@@ -16,26 +19,25 @@ var NewstickerProject = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Text style={styles.welcome}>Newsticker Example</Text>
+        <Newsticker
+          style={styles.alignLeft}
+          text={'This is a rearlly awesome Newsticker !!'}
+        />
+
       </View>
     );
   }
 });
 
 var styles = StyleSheet.create({
+  alignLeft: {
+    textAlign: 'left',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    paddingHorizontal: 80,
     backgroundColor: '#F5FCFF',
   },
   welcome: {
