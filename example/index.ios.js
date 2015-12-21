@@ -13,17 +13,33 @@ var {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } = React;
 
 var NewstickerProject = React.createClass({
+  getInitialState: function() {
+    return {
+      is_begin: false,
+    };
+  },
   render: function() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Newsticker Example</Text>
         <Newsticker
           style={styles.alignLeft}
-          text={'This is a rearlly awesome Newsticker !!'}
+          typeInterval={100}
+          blinkInterval={500}
+          start={this.state.is_begin}
+          text={'This is a really awesome Newsticker !!'}
         />
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={()=>{this.setState({is_begin: true})}}
+        >
+        <Text style={styles.buttonText}>Start Newsticker</Text>
+      </TouchableOpacity>
 
       </View>
     );
@@ -33,6 +49,20 @@ var NewstickerProject = React.createClass({
 var styles = StyleSheet.create({
   alignLeft: {
     textAlign: 'left',
+  },
+  button: {
+    height: 30,
+    marginTop: 30,
+    paddingTop: 6,
+    paddingBottom: 6,
+    borderRadius: 3,
+    borderWidth: 1,
+    backgroundColor: '#007AFF',
+    borderColor: 'transparent',
+  },
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
   },
   container: {
     flex: 1,
