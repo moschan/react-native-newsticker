@@ -1,6 +1,6 @@
 {
   "name": "react-native-newsticker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The News Ticker component for React Native",
   "main": "index.js",
   "scripts": {
