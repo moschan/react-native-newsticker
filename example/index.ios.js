@@ -4,8 +4,7 @@
  */
 'use strict';
 
-import Newsticker from './index.js';
-// var React = require('./index.js');
+import Newsticker from 'react-native-newsticker';
 
 var React = require('react-native');
 var {
