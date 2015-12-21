@@ -15,9 +15,10 @@
     "react-native",
     "ios",
     "android",
-    "newsticker"
+    "newsticker",
+    "news-ticker"
   ],
-  "author": "moschan <kaityo02＠gmail.com> (http://moschan.com)",
+  "author": "moschan <kaityo02＠gmail.com> (http://moschan.com/blog)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/moschan/react-native-newsticker/issues"
