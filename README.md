@@ -18,7 +18,7 @@ npm i react-native-newsticker
 in JavaScirpt
 
 ```
-import Radio from 'react-native-newsticker';
+import Newsticker from 'react-native-newsticker';
 ```
 
 
