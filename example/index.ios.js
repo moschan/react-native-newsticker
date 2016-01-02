@@ -21,6 +21,9 @@ var NewstickerProject = React.createClass({
       is_begin: false,
     };
   },
+  onFinish: function() {
+    console.log('Newsticker Finished')
+  },
   render: function() {
     return (
       <View style={styles.container}>
@@ -29,16 +32,17 @@ var NewstickerProject = React.createClass({
           style={styles.alignLeft}
           typeInterval={100}
           blinkInterval={500}
+          onFinish={this.onFinish.bind(this)}
           start={this.state.is_begin}
           text={'This is a really awesome Newsticker !!'}
         />
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={()=>{this.setState({is_begin: true})}}
-        >
-        <Text style={styles.buttonText}>Start Newsticker</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={()=>{this.setState({is_begin: !this.state.is_begin})}}
+          >
+          <Text style={styles.buttonText}>{this.state.is_begin ? 'Stop' : 'Start'} Newsticker</Text>
+        </TouchableOpacity>
 
       </View>
     );
