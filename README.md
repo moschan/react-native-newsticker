@@ -6,7 +6,12 @@ react-native-newsticker
 
 [![NPM](https://nodei.co/npm/react-native-newsticker.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-native-newsticker/)
 
-![Demo](./doc/demo.gif)
+Demo
+---
+![Demo](./doc/demo.gif)![Demo](./doc/demo_stop.gif)
+
+
+
 
 Installation
 ==
