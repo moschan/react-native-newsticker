@@ -23,6 +23,7 @@ var NewstickerProject = React.createClass({
   },
   onFinish: function() {
     console.log('Newsticker Finished')
+    this.setState({is_begin: !this.state.is_begin})
   },
   render: function() {
     return (
@@ -32,7 +33,7 @@ var NewstickerProject = React.createClass({
           style={styles.alignLeft}
           typeInterval={100}
           blinkInterval={500}
-          onFinish={this.onFinish.bind(this)}
+          onFinish={() => {this.onFinish()}}
           start={this.state.is_begin}
           text={'This is a really awesome Newsticker !!'}
         />
