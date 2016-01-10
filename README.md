@@ -8,10 +8,10 @@ react-native-newsticker
 
 Demo
 ---
-![Demo](./doc/demo.gif)![Demo](./doc/demo_stop.gif)
 
+![Demo](./doc/simple_demo.gif)
 
-
+![Demo](./doc/restart_demo.gif)
 
 Installation
 ==
@@ -48,6 +48,7 @@ Customized
   onFinish={() => {this.onFinish()}}
   cursor={true}
   start={this.state.is_begin}
+  back={this.state.is_back}
   text={'This is a really awesome Newsticker !!'}
 />
 ```
@@ -63,6 +64,10 @@ The text of newsticker
 start(boolean) `Default: true`
 ---
 If you pass false, newsticker does’nt start. If you pass the false while runnning, newsticker is stopped. You can toggle newsticker using this param.
+
+back(boolean) `Default: false`
+---
+If you pass true when `start` is true, newsticker start to backward.
 
 typeInterval(int) `Default: 100`
 ---
@@ -88,7 +93,7 @@ Style of text
 
 Contributing
 ==
-Welcome :)
+Of course! Welcome :)
 
 
 License
