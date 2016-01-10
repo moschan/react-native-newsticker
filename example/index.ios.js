@@ -5,6 +5,7 @@
 'use strict';
 
 import Newsticker from 'react-native-newsticker';
+// import Newsticker from './index.js';
 
 var React = require('react-native');
 var {
@@ -19,6 +20,7 @@ var NewstickerProject = React.createClass({
   getInitialState: function() {
     return {
       is_begin: false,
+      is_back: false,
     };
   },
   onFinish: function() {
@@ -35,15 +37,43 @@ var NewstickerProject = React.createClass({
           blinkInterval={500}
           onFinish={() => {this.onFinish()}}
           start={this.state.is_begin}
+          back={this.state.is_back}
           text={'This is a really awesome Newsticker !!'}
         />
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={()=>{this.setState({is_begin: !this.state.is_begin})}}
-          >
-          <Text style={styles.buttonText}>{this.state.is_begin ? 'Stop' : 'Start'} Newsticker</Text>
-        </TouchableOpacity>
+        <View style={styles.flex}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={()=>{
+              this.setState({
+                is_back: true,
+                is_begin: true,
+              })}
+            }
+            >
+            <Text style={styles.buttonText}>{"<<"}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={()=>{this.setState({is_begin: !this.state.is_begin})}}
+            >
+            <Text style={styles.buttonText}>{this.state.is_begin ? '‖' : '▷'}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.button}
+            onPress={()=>{
+              this.setState({
+                is_back: false,
+                is_begin: true,
+              })
+            }}
+            >
+            <Text style={styles.buttonText}>{">>"}</Text>
+          </TouchableOpacity>
+
+        </View>
 
       </View>
     );
@@ -55,8 +85,10 @@ var styles = StyleSheet.create({
     textAlign: 'left',
   },
   button: {
+    flex: 1,
     height: 30,
     marginTop: 30,
+    marginHorizontal: 10,
     paddingTop: 6,
     paddingBottom: 6,
     borderRadius: 3,
@@ -67,6 +99,9 @@ var styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     textAlign: 'center',
+  },
+  flex: {
+    flexDirection: 'row',
   },
   container: {
     flex: 1,
