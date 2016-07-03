@@ -1,33 +1,36 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
+ * @flow
  */
-'use strict';
+
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from 'react-native';
+
 
 import Newsticker from 'react-native-newsticker';
 // import Newsticker from './index.js';
 
-var React = require('react-native');
-var {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} = React;
-
-var NewstickerProject = React.createClass({
-  getInitialState: function() {
-    return {
+class NewstickerExample extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
       is_begin: false,
       is_back: false,
-    };
-  },
-  onFinish: function() {
+    }
+  }
+  onFinish () {
     console.log('Newsticker Finished')
     this.setState({is_begin: !this.state.is_begin})
-  },
-  render: function() {
+  }
+
+  render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Newsticker Example</Text>
@@ -78,9 +81,9 @@ var NewstickerProject = React.createClass({
       </View>
     );
   }
-});
+}
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   alignLeft: {
     textAlign: 'left',
   },
@@ -106,7 +109,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 80,
+    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -121,4 +124,4 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('NewstickerProject', () => NewstickerProject);
+AppRegistry.registerComponent('NewstickerExample', () => NewstickerExample);

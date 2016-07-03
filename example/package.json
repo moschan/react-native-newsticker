@@ -1,14 +1,12 @@
 {
-  "name": "NewstickerProject",
+  "name": "NewstickerExample",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "react-native start"
   },
   "dependencies": {
-    "react-native": "^0.16.0"
-  },
-  "devDependencies": {
-    "react-native-newsticker": "1.2.1"
+    "react": "15.2.0",
+    "react-native": "^0.28.0"
   }
 }
